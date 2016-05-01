@@ -20,7 +20,8 @@ services:
         - "443:443"
       networks:
         - sf-network
-        
+      restart: always
+
     ghost1:
       container_name: ghost1
       build: 
@@ -30,7 +31,8 @@ services:
       - "2368:2368"
       networks:
         - sf-network
-
+      restart: always
+      
 networks:
     sf-network:
       driver: bridge
