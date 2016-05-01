@@ -1,0 +1,36 @@
+    # 1. Update config values (localhost --> mongo and localhost --> redis) in config.development.json
+    # 2. Set APP_ENV environment variable to proper value in Dockerfile-redis (default is "development")
+    #    export APP_ENV=development
+    # 3. Run docker-compose build
+    # 4. Run docker-compose up
+    # 5. Live long and prosper
+    
+version: "2"
+ 
+services:
+    nginx:
+      container_name: nginx
+      build: 
+        context: .
+        dockerfile: ./nginx.dockerfile
+      links:
+        - ghost1:ghost1
+      ports:
+        - "80:80"
+        - "443:443"
+      networks:
+        - sf-network
+        
+    ghost1:
+      container_name: ghost1
+      build: 
+        context: .
+        dockerfile: ./ghost.dockerfile
+      ports:
+      - "2368:2368"
+      networks:
+        - sf-network
+
+networks:
+    sf-network:
+      driver: bridge
