@@ -28,11 +28,34 @@ services:
         context: .
         dockerfile: ./ghost.dockerfile
       ports:
-      - "2368:2368"
+        - "2368:2368"
+      environment:
+        - "NODE_ENV=production"
+        - "PORT=2368"
+        - "MYURL=http://consumerrights.me"
+      volumes:
+        - /srv/docker/ghost/:/var/lib/ghost
       networks:
         - sf-network
       restart: always
-      
+
+    ghost2:
+      container_name: ghost2
+      build: 
+        context: .
+        dockerfile: ./ghost.dockerfile
+      ports:
+        - "3368:3368"
+      environment:
+        - "NODE_ENV=production"
+        - "PORT=3368"
+        - "MYURL=http://offthemaintrack.co.uk"
+      volumes:
+        - /srv/docker/ghost-other/:/var/lib/ghost
+      networks:
+        - sf-network
+      restart: always
+
 networks:
     sf-network:
       driver: bridge

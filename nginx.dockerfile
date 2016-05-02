@@ -4,7 +4,8 @@ VOLUME /var/cache/nginx
 
 # Copy custom nginx config
 COPY ./nginx.conf /etc/nginx/nginx.conf
-COPY ./ghost.conf /etc/nginx/conf.d/ghost.conf
+COPY ./consumerrights.conf /etc/nginx/conf.d/consumerrights.conf
+COPY ./offthemaintrack.conf /etc/nginx/conf.d/offthemaintrack.conf
 
 EXPOSE 80 443
 
