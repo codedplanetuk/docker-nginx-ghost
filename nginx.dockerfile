@@ -6,6 +6,7 @@ VOLUME /var/cache/nginx
 COPY ./nginx.conf /etc/nginx/nginx.conf
 COPY ./consumerrights.conf /etc/nginx/conf.d/consumerrights.conf
 COPY ./offthemaintrack.conf /etc/nginx/conf.d/offthemaintrack.conf
+COPY ./ip.conf /etc/nginx/conf.d/ip.conf
 
 EXPOSE 80 443
 
