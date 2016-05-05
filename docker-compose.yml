@@ -20,7 +20,7 @@ services:
       container_name: ghost1
       build: 
         context: .
-        dockerfile: ./ghost.dockerfile
+        dockerfile: ./ghost1.dockerfile
       ports:
         - "2368:2368"
       environment:
@@ -37,7 +37,7 @@ services:
       container_name: ghost2
       build: 
         context: .
-        dockerfile: ./ghost.dockerfile
+        dockerfile: ./ghost2.dockerfile
       ports:
         - "3368:3368"
       environment:
