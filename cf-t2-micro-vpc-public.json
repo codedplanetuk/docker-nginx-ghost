@@ -228,7 +228,7 @@
         "ImageId"  : { "Fn::FindInMap" : [ "AWSRegionArch2AMI", { "Ref" : "AWS::Region" }, 
                          { "Fn::FindInMap" : [ "AWSInstanceType2Arch", { "Ref" : "EC2InstanceType" }, "Arch" ] } ] },
         "Tags" : [
-            {"Key" : "Name", "Value" : "VPCTEST3"}
+            {"Key" : "Name", "Value" : "VPC-Ubuntu-Ghost"}
         ],
         "UserData" : { "Fn::Base64" : { "Fn::Join" : ["", [
           "#!/bin/sh\n",
