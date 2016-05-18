@@ -286,7 +286,7 @@
 
           "# Run docker commands to start nginx and ghost\n",
           "docker-compose build\n",
-          "docker-compose up -d\n",
+          "docker-compose up -d\n"
 
           ]] }
         },
