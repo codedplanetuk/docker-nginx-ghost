@@ -267,6 +267,9 @@
           "mkdir /home/ubuntu/.aws\n",
           "echo \"[default]\nregion = eu-west-1\" >> /home/ubuntu/.aws/config\n",
           "echo \"[default]\naws_access_key_id = ",{ "Ref" : "AWSCLIAccessKeyId" }, "\naws_secret_access_key = ", { "Ref" : "AWSCLISecretAccessKey" } ,"\n\"", " >> /home/ubuntu/.aws/credentials\n",
+          "export AWS_ACCESS_KEY_ID=", { "Ref" : "AWSCLIAccessKeyId" }, "\n",
+          "export AWS_SECRET_ACCESS_KEY=", { "Ref" : "AWSCLISecretAccessKey" }, "\n",
+          "export AWS_DEFAULT_REGION=eu-west-1\n",
 
           "# Download source and unzip\n",
           "mkdir /usr/tmp\n",
